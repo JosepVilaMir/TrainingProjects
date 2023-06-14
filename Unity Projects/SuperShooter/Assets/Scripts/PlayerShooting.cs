@@ -22,11 +22,8 @@ public class PlayerShooting : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void OnFire(Input value)
     {
-        if(Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            Instantiate(bulletPrefab, shootPoint.transform.position, shootPoint.transform.rotation);
-        }
+        Instantiate(bulletPrefab, shootPoint.transform.position, shootPoint.transform.rotation);
     }
 }
