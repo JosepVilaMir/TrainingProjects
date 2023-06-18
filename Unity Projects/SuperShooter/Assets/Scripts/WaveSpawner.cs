@@ -13,10 +13,9 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField]
     private float spawnRate;
 
-    // Start is called before the first frame update
     void Start()
     {
-        WavesManager.instance.waves.Add(this);
+        WavesManager.instance.AddWave(this);
         InvokeRepeating("Spawn", startTime, spawnRate);
         Invoke("EndSpawner", endTime);
     }
@@ -29,7 +28,7 @@ public class WaveSpawner : MonoBehaviour
 
     private void EndSpawner()
     {
-        WavesManager.instance.waves.Remove(this);
+        WavesManager.instance.RemoveWave(this);
         CancelInvoke();
     }
 }

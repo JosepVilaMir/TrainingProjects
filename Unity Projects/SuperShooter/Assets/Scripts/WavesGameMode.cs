@@ -6,19 +6,28 @@ using UnityEngine.SceneManagement;
 public class WavesGameMode : MonoBehaviour
 {
     [SerializeField] Life playerLife;
+    [SerializeField] Life baseLife;
+
+    private void Start()
+    {
+        playerLife.onDeath.AddListener(OnPlayerOrBaseDied);
+        baseLife.onDeath.AddListener(OnPlayerOrBaseDied);
+        EnemiesManager.instance.onChanged.AddListener(CheckWinCondition);
+        WavesManager.instance.onChanged.AddListener(CheckWinCondition);
+    }
 
     // Update is called once per frame
-    void Update()
+    void CheckWinCondition()
     {
-
         if(EnemiesManager.instance.enemies.Count <= 0 && WavesManager.instance.waves.Count <= 0)
         {
             SceneManager.LoadScene("WinScreen");
         }
-
-        if(playerLife.amount <= 0)
-        {
-            SceneManager.LoadScene("LoseScreen");
-        }
     }
+
+    void OnPlayerOrBaseDied()
+    {
+        SceneManager.LoadScene("LoseScreen");
+    }
+
 }
