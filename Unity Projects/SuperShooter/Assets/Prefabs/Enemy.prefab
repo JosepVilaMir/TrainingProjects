@@ -48,10 +48,10 @@ MonoBehaviour:
   angle: 45
   obstaclesLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 1
   objectsLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 64
   detectedObject: {fileID: 0}
 --- !u!1001 &6802023009599068987
 PrefabInstance:
