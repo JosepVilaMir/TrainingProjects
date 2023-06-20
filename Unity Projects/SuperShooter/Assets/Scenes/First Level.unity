@@ -1971,15 +1971,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1382961571851417234, guid: 154abace3f1439f4c8b81fa58047e716,
+        type: 3}
+      propertyPath: baseTransform
+      value: 
+      objectReference: {fileID: 2083678990}
     - target: {fileID: 5624069497468690153, guid: 154abace3f1439f4c8b81fa58047e716,
         type: 3}
       propertyPath: movementSpeed
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7022457573571146663, guid: 154abace3f1439f4c8b81fa58047e716,
-        type: 3}
-      propertyPath: distance
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8736456508153267780, guid: 154abace3f1439f4c8b81fa58047e716,
         type: 3}
@@ -1994,7 +1994,7 @@ PrefabInstance:
     - target: {fileID: 8736456508153764452, guid: 154abace3f1439f4c8b81fa58047e716,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 91.30302
+      value: 89.97
       objectReference: {fileID: 0}
     - target: {fileID: 8736456508153764452, guid: 154abace3f1439f4c8b81fa58047e716,
         type: 3}
@@ -2004,7 +2004,7 @@ PrefabInstance:
     - target: {fileID: 8736456508153764452, guid: 154abace3f1439f4c8b81fa58047e716,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 110.86555
+      value: 109.39
       objectReference: {fileID: 0}
     - target: {fileID: 8736456508153764452, guid: 154abace3f1439f4c8b81fa58047e716,
         type: 3}
@@ -3566,7 +3566,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400066, guid: 5ae220fa0f79ffe41b0102a618febf5a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 96.990524
+      value: 92.29
       objectReference: {fileID: 0}
     - target: {fileID: 400066, guid: 5ae220fa0f79ffe41b0102a618febf5a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12889,7 +12889,7 @@ GameObject:
   - component: {fileID: 2083678987}
   - component: {fileID: 2083678986}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: BaseDamagePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

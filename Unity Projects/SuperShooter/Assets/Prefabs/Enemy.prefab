@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8990487954155762563}
   - component: {fileID: 7022457573571146663}
+  - component: {fileID: 1382961571851417234}
   m_Layer: 0
   m_Name: AI
   m_TagString: Untagged
@@ -53,6 +54,23 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   detectedObject: {fileID: 0}
+--- !u!114 &1382961571851417234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7463536038786273385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 803d22ef8c709c74eb09488eea7272bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentState: 0
+  sightSensor: {fileID: 7022457573571146663}
+  baseTransform: {fileID: 0}
+  baseAttackDistance: 2
+  playerAttackDistance: 3
 --- !u!1001 &6802023009599068987
 PrefabInstance:
   m_ObjectHideFlags: 0

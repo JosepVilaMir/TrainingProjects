@@ -49,4 +49,6 @@ public class Sight : MonoBehaviour
         Vector3 leftDirection = Quaternion.Euler(0, -angle, 0) * transform.forward;
         Gizmos.DrawRay(transform.position, leftDirection * distance);
     }
+
+    public Collider GetDetectedObject() { return detectedObject; }
 }
