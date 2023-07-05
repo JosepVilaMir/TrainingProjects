@@ -1,14 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyFSM : MonoBehaviour
 {
     [SerializeField] private enum EnemyState { GoToBase, AttackBase, ChasePlayer, AttackPlayer }
     [SerializeField] private EnemyState currentState;
     [SerializeField] private Sight sightSensor;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private float fireRate;
+    [SerializeField] private float lastShootTime;
 
     private Transform baseTransform;
+    private NavMeshAgent agent;
 
     [SerializeField] private float baseAttackDistance;
     [SerializeField] private float playerAttackDistance;
@@ -16,6 +21,7 @@ public class EnemyFSM : MonoBehaviour
     private void Awake()
     {
         baseTransform = GameObject.Find("BaseDamagePoint").transform;
+        agent = GetComponentInParent<NavMeshAgent>();
     }
 
     private void Update()
@@ -27,7 +33,10 @@ public class EnemyFSM : MonoBehaviour
     }
 
     void GoToBase() 
-    { 
+    {
+        agent.isStopped = false;
+        agent.SetDestination(baseTransform.position);
+
         if(sightSensor.GetDetectedObject() != null) 
         {
             currentState = EnemyState.ChasePlayer;
@@ -40,14 +49,24 @@ public class EnemyFSM : MonoBehaviour
             currentState = EnemyState.AttackBase;
         }
     }
-    void AttackBase() { print("AttackBase"); }
-    void ChasePlayer() 
+    void AttackBase() 
     { 
+        agent.isStopped = true;
+        LookTo(baseTransform.position);
+        Shoot();
+
+    }
+    void ChasePlayer() 
+    {
+        agent.isStopped = false;
+
         if(sightSensor.GetDetectedObject() == null)
         {
             currentState = EnemyState.GoToBase;
             return;
         }
+
+        agent.SetDestination(sightSensor.GetDetectedObject().transform.position);
 
         float distanceToPlayer = Vector3.Distance(transform.position, sightSensor.GetDetectedObject().transform.position);
 
@@ -57,12 +76,17 @@ public class EnemyFSM : MonoBehaviour
         }
     }
     void AttackPlayer() 
-    { 
+    {
+        agent.isStopped = true;
+
         if(sightSensor.GetDetectedObject() == null)
         {
             currentState = EnemyState.GoToBase;
             return;
         }
+
+        LookTo(sightSensor.GetDetectedObject().transform.position);
+        Shoot();
 
         float distanceToPlayer = Vector3.Distance(transform.position, sightSensor.GetDetectedObject().transform.position);
 
@@ -79,5 +103,22 @@ public class EnemyFSM : MonoBehaviour
 
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, baseAttackDistance);
+    }
+
+    void Shoot()
+    {
+        var timeSinceLastShoot = Time.time - lastShootTime;
+        if (timeSinceLastShoot > fireRate) 
+        {
+            lastShootTime = Time.time;
+            Instantiate(bulletPrefab, transform.position, transform.rotation);
+        }
+    }
+
+    void LookTo(Vector3 targetPosition)
+    {
+        Vector3 directionToPosition = Vector3.Normalize(targetPosition - transform.parent.position);
+        directionToPosition.y = 0;
+        transform.parent.forward = directionToPosition;
     }
 }
