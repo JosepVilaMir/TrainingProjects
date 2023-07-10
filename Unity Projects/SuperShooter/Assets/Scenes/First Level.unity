@@ -2123,6 +2123,16 @@ PrefabInstance:
       propertyPath: movementSpeed
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7747764416519120738, guid: 154abace3f1439f4c8b81fa58047e716,
+        type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7747764416519120738, guid: 154abace3f1439f4c8b81fa58047e716,
+        type: 3}
+      propertyPath: onDeath.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8736456508153267780, guid: 154abace3f1439f4c8b81fa58047e716,
         type: 3}
       propertyPath: m_Name
@@ -2499,8 +2509,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.41498888, y: -0.2658231, z: 0.12848558, w: 0.86058927}
-  m_LocalPosition: {x: 102.12602, y: 61.087505, z: 104.00923}
+  m_LocalRotation: {x: -0.40959242, y: 0.18823868, z: -0.08679156, w: -0.88840735}
+  m_LocalPosition: {x: 111.82352, y: 87.35513, z: 68.21026}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
