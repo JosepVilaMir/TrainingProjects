@@ -18,6 +18,8 @@ public class EnemyFSM : MonoBehaviour
     [SerializeField] private float baseAttackDistance;
     [SerializeField] private float playerAttackDistance;
 
+    [SerializeField] private ParticleSystem muzzleEffect;
+
     private void Awake()
     {
         baseTransform = GameObject.Find("BaseDamagePoint").transform;
@@ -112,6 +114,7 @@ public class EnemyFSM : MonoBehaviour
         {
             lastShootTime = Time.time;
             Instantiate(bulletPrefab, transform.position, transform.rotation);
+            muzzleEffect.Play();
         }
     }
 

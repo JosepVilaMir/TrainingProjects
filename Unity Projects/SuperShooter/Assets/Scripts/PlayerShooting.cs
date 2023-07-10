@@ -5,10 +5,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerShooting : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject bulletPrefab;
-    [SerializeField]
-    private GameObject shootPoint;
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private GameObject shootPoint;
+    [SerializeField] private ParticleSystem muzzleEffect;
 
     public void OnFire(InputValue value)
     {
@@ -18,6 +17,8 @@ public class PlayerShooting : MonoBehaviour
 
             clone.transform.position = shootPoint.transform.position;
             clone.transform.rotation = shootPoint.transform.rotation;
+
+            muzzleEffect.Play();
         }
     }
 
