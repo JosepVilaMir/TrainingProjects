@@ -10,6 +10,7 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 6c011515a25b1e6489f04f3465cedb4b
   m_FloatValues:
+    7fe4aeb0e47203546840bf56c96aa7c5: 22000
     e744daa3d5aa8a04eaa9beaa124e3803: -34.66879
   m_TransitionOverrides: {}
 --- !u!243 &-5774534378574279901
@@ -31,6 +32,22 @@ AudioMixerGroupController:
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
+--- !u!244 &-3521188390020446779
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: adcd9df3e3c4d2a43a094d1743aa4032
+  m_EffectName: Lowpass Simple
+  m_MixLevel: 120670f2162145c4a8f743d10869c1ff
+  m_Parameters:
+  - m_ParameterName: Cutoff freq
+    m_GUID: 7fe4aeb0e47203546840bf56c96aa7c5
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &-2476033066084835639
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -76,6 +93,7 @@ AudioMixerController:
   m_Snapshots:
   - {fileID: 24500006}
   - {fileID: -6159491382518513333}
+  - {fileID: 4986689189888737415}
   m_StartSnapshot: {fileID: 24500006}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
@@ -88,7 +106,7 @@ AudioMixerController:
     - c82e1dfb1b07e374ea713f8e9db08418
     name: View
   m_CurrentViewIndex: 0
-  m_TargetSnapshot: {fileID: -6159491382518513333}
+  m_TargetSnapshot: {fileID: 4986689189888737415}
 --- !u!243 &24300002
 AudioMixerGroupController:
   m_ObjectHideFlags: 0
@@ -106,6 +124,7 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 24400004}
+  - {fileID: -3521188390020446779}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
@@ -133,7 +152,21 @@ AudioMixerSnapshotController:
   m_Name: Snapshot
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 6aa6c91a942c5304d8fdca1f38d2f18f
-  m_FloatValues: {}
+  m_FloatValues:
+    7fe4aeb0e47203546840bf56c96aa7c5: 22000
+  m_TransitionOverrides: {}
+--- !u!245 &4986689189888737415
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Bomb Stun
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 7d5a476088eed6e44911f4c1a86d4e3a
+  m_FloatValues:
+    7fe4aeb0e47203546840bf56c96aa7c5: 1000
+    e744daa3d5aa8a04eaa9beaa124e3803: -34.66879
   m_TransitionOverrides: {}
 --- !u!244 &7566501848526518158
 AudioMixerEffectController:

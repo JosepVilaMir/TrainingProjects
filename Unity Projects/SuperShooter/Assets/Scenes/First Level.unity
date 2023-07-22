@@ -8157,7 +8157,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 8955ef71b3f090d45adb1918c64f99b7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.686
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -12584,6 +12584,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1651728898}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &1659218885 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: -8698637600205990340, guid: 4e0bb934baf1da140bbf22645720d3dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 613046371246270900}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1664678001 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 183158, guid: b38a3290156af5046a449900e3163984,
@@ -15681,6 +15687,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6999518904663290040, guid: 4e0bb934baf1da140bbf22645720d3dc,
+        type: 3}
+      propertyPath: shootSound
+      value: 
+      objectReference: {fileID: 1659218885}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

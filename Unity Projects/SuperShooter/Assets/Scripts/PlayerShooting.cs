@@ -8,6 +8,7 @@ public class PlayerShooting : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private GameObject shootPoint;
     [SerializeField] private ParticleSystem muzzleEffect;
+    [SerializeField] private AudioSource shootSound;
 
     public void OnFire(InputValue value)
     {
@@ -19,6 +20,7 @@ public class PlayerShooting : MonoBehaviour
             clone.transform.rotation = shootPoint.transform.rotation;
 
             muzzleEffect.Play();
+            shootSound.Play();
         }
     }
 

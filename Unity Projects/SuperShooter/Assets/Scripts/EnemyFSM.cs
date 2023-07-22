@@ -11,6 +11,7 @@ public class EnemyFSM : MonoBehaviour
     [SerializeField] private GameObject bulletPrefab;
     [SerializeField] private float fireRate;
     [SerializeField] private float lastShootTime;
+    [SerializeField] private AudioSource shootSound;
 
     private Transform baseTransform;
     private NavMeshAgent agent;
@@ -115,6 +116,7 @@ public class EnemyFSM : MonoBehaviour
             lastShootTime = Time.time;
             Instantiate(bulletPrefab, transform.position, transform.rotation);
             muzzleEffect.Play();
+            shootSound.Play();
         }
     }
 
